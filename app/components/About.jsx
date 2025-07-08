@@ -12,7 +12,7 @@ const About = () => {
                         <h1 className='pb-6 text-5xl lg:text-7xl font-semibold tracking-tight lg:mt-16'>
                             Gurlal Singh
                         </h1>
-                        <span className='bg-gradient-to-r from-pink-300 via-slate-500 to-purple-500 bg-clip-text text-transparent text-3xl lg:text-5xl font-medium tracking-tight mb-4'>
+                        <span className='bg-gradient-to-r from-pink-300 via-slate-500 to-purple-500 bg-clip-text text-transparent text-3xl lg:text-4xl font-medium tracking-tight mb-4'>
                             AI Engineer
                         </span>
                         <p className='max-w-xl text-base lg:text-lg font-light tracking-tight leading-relaxed'>
