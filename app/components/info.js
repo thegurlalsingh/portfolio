@@ -1,7 +1,7 @@
 export const EXPERIENCE = [
   {
     year: "January 2024 - September 2024",
-    role: "Creative Design Team Member",
+    role: "Multimedia Team Member",
     company: "National Service Scheme - Bennett University",
   },
   {
