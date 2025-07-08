@@ -9,10 +9,10 @@ const About = () => {
                 {/* Text Section */}
                 <div className='w-full lg:w-1/2 px-6 lg:px-12'>
                     <div className='flex flex-col items-center lg:items-start text-center lg:text-left'>
-                        <h1 className='pb-6 text-5xl lg:text-7xl font-semibold tracking-tight lg:mt-16'>
+                        <h1 className='pb-5 text-5xl lg:text-7xl font-semibold tracking-tight lg:mt-14'>
                             Gurlal Singh
                         </h1>
-                        <span className='bg-gradient-to-r from-pink-300 via-slate-500 to-purple-500 bg-clip-text text-transparent text-3xl lg:text-4xl font-medium tracking-tight mb-4'>
+                        <span className='bg-gradient-to-r from-pink-300 via-slate-500 to-purple-500 bg-clip-text text-transparent text-3xl lg:text-5xl font-medium tracking-tight mb-4'>
                             AI Engineer
                         </span>
                         <p className='max-w-xl text-base lg:text-lg font-light tracking-tight leading-relaxed'>
