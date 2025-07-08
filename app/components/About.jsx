@@ -9,14 +9,14 @@ const About = () => {
                 {/* Text Section */}
                 <div className='w-full lg:w-1/2 px-6 lg:px-12'>
                     <div className='flex flex-col items-center lg:items-start text-center lg:text-left'>
-                        <h1 className='pb-5 text-5xl lg:text-7xl font-semibold tracking-tight lg:mt-14'>
+                        <h1 className='pb-4 text-5xl lg:text-7xl font-semibold tracking-tight lg:mt-10'>
                             Gurlal Singh
                         </h1>
-                        <span className='bg-gradient-to-r from-pink-300 via-slate-500 to-purple-500 bg-clip-text text-transparent text-3xl lg:text-5xl font-medium tracking-tight mb-4'>
-                            AI Engineer
+                        <span className='bg-gradient-to-r from-pink-300 via-slate-500 to-purple-500 bg-clip-text text-transparent text-4xl lg:text-4xl font-medium tracking-tight mb-4 pb-1'>
+                            Machine Learning Engineer
                         </span>
                         <p className='max-w-xl text-base lg:text-lg font-light tracking-tight leading-relaxed'>
-                            I am an AI engineer with a strong foundation in building intelligent systems and applying machine learning techniques to solve complex problems. I am proficient in working with cutting-edge AI models and frameworks, and I also have experience with Next.js for building modern, performant web applications. Currently, I am enhancing my technical skills by learning data structures and algorithms (DSA), further strengthening my problem-solving abilities and deepening my understanding of computational efficiency.
+                            I am an Machine Learning engineer with a strong foundation in building intelligent systems and applying machine learning and deep learning techniques to solve complex problems. I am proficient in working with cutting-edge AI models and frameworks, and I also have experience with React.js for building modern, performant web applications. Currently, I am enhancing my technical skills by learning data structures and algorithms (DSA), further strengthening my problem-solving abilities and deepening my understanding of computational efficiency.
                         </p>
                     </div>
                 </div>
