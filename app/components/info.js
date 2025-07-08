@@ -1,15 +1,23 @@
-
-
 export const EXPERIENCE = [
   {
-    year: "December 2023 - September 2024",
+    year: "January 2024 - September 2024",
     role: "Creative Design Team Member",
     company: "National Service Scheme - Bennett University",
   },
   {
-    year: "September 2024 - Present",
-    role: "Head Hospitality",
+    year: "September 2024 - June 2025",
+    role: "Head of Hospitality",
     company: "National Service Scheme - Bennett University",
+  },
+  {
+    year: "June 2025 - Present",
+    role: "Full Stack Software Engineering Trainee",
+    company: "DevsLane",
+  },
+  {
+    year: "June 2025 - Present",
+    role: "AI Research Intern",
+    company: "Under Dr.Prashant Gupta, Dr.Bireshwar Mazumdar and Dr.Shallu Sharma",
   },
 ];
 export const PROJECTS = [
