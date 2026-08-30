@@ -1,0 +1,1178 @@
+<!DOCTYPE html>
+<html class="dark" lang="en" style="scroll-behavior: auto;">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>KINETIC | Spatial Narrative Portfolio</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&amp;family=Geist:wght@300;400;500;600&amp;family=JetBrains+Mono:wght@500&amp;display=swap"
+        rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container": "#1f1f1f",
+                        "surface-tint": "#c6c6c6",
+                        "primary-container": "#000000",
+                        "inverse-on-surface": "#303030",
+                        "on-tertiary-fixed-variant": "#3b4857",
+                        "on-surface": "#e2e2e2",
+                        "secondary-container": "#4a4949",
+                        "primary-fixed-dim": "#c6c6c6",
+                        "secondary-fixed-dim": "#c8c6c5",
+                        "error-container": "#93000a",
+                        "surface-bright": "#393939",
+                        "on-surface-variant": "#cfc4c5",
+                        "tertiary-fixed": "#d6e4f7",
+                        "surface-variant": "#353535",
+                        "on-background": "#e2e2e2",
+                        "on-secondary": "#313030",
+                        "on-primary": "#303030",
+                        "inverse-surface": "#e2e2e2",
+                        "surface-container-highest": "#353535",
+                        "on-tertiary": "#243240",
+                        "on-secondary-container": "#bab8b7",
+                        "secondary": "#c8c6c5",
+                        "surface-container-lowest": "#0e0e0e",
+                        "outline": "#988e90",
+                        "inverse-primary": "#5e5e5e",
+                        "on-primary-fixed-variant": "#474747",
+                        "on-tertiary-fixed": "#0f1d2a",
+                        "on-error-container": "#ffdad6",
+                        "on-secondary-fixed": "#1c1b1b",
+                        "tertiary-fixed-dim": "#bac8da",
+                        "background": "#131313",
+                        "outline-variant": "#4c4546",
+                        "surface-container-high": "#2a2a2a",
+                        "tertiary-container": "#000000",
+                        "surface": "#131313",
+                        "on-error": "#690005",
+                        "surface-container-low": "#1b1b1b",
+                        "on-primary-container": "#757575",
+                        "primary-fixed": "#e2e2e2",
+                        "tertiary": "#bac8da",
+                        "primary": "#c6c6c6",
+                        "on-primary-fixed": "#1b1b1b",
+                        "error": "#ffb4ab",
+                        "secondary-fixed": "#e5e2e1",
+                        "on-secondary-fixed-variant": "#474646",
+                        "on-tertiary-container": "#697787",
+                        "surface-dim": "#131313"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "margin-mobile": "24px",
+                        "section-gap": "160px",
+                        "container-max": "1440px",
+                        "unit": "8px",
+                        "gutter": "32px",
+                        "margin-desktop": "80px"
+                    },
+                    "fontFamily": {
+                        "display-xl": [
+                            "Syne"
+                        ],
+                        "body-md": [
+                            "Geist"
+                        ],
+                        "body-lg": [
+                            "Geist"
+                        ],
+                        "headline-lg-mobile": [
+                            "Syne"
+                        ],
+                        "headline-lg": [
+                            "Syne"
+                        ],
+                        "label-sm": [
+                            "JetBrains Mono"
+                        ]
+                    },
+                    "fontSize": {
+                        "display-xl": [
+                            "clamp(4rem, 10vw, 8rem)",
+                            {
+                                "lineHeight": "0.9em",
+                                "letterSpacing": "-0.04em",
+                                "fontWeight": "800"
+                            }
+                        ],
+                        "body-md": [
+                            "16px",
+                            {
+                                "lineHeight": "24px",
+                                "fontWeight": "400"
+                            }
+                        ],
+                        "body-lg": [
+                            "20px",
+                            {
+                                "lineHeight": "32px",
+                                "fontWeight": "400"
+                            }
+                        ],
+                        "headline-lg-mobile": [
+                            "40px",
+                            {
+                                "lineHeight": "44px",
+                                "letterSpacing": "-0.02em",
+                                "fontWeight": "700"
+                            }
+                        ],
+                        "headline-lg": [
+                            "64px",
+                            {
+                                "lineHeight": "72px",
+                                "letterSpacing": "-0.02em",
+                                "fontWeight": "700"
+                            }
+                        ],
+                        "label-sm": [
+                            "12px",
+                            {
+                                "lineHeight": "16px",
+                                "letterSpacing": "0.05em",
+                                "fontWeight": "500"
+                            }
+                        ]
+                    }
+                },
+            },
+        }
+    </script>
+    <style>
+        :root {
+            --electric-blue: #00f0ff;
+            --lime-green: #ccff00;
+            --surface-glass: rgba(255, 255, 255, 0.03);
+            --border-glass: rgba(255, 255, 255, 0.08);
+        }
+
+        *,
+        body {
+            cursor: none !important;
+        }
+
+        body {
+            background-color: #131313;
+            color: #e2e2e2;
+            overflow-x: hidden;
+            font-family: 'Geist', sans-serif;
+        }
+
+        #custom-cursor {
+            width: 20px;
+            height: 20px;
+            background: white;
+            border-radius: 50%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            pointer-events: none;
+            z-index: 9999;
+            transition: width 0.3s cubic-bezier(0.25, 1, 0.5, 1), height 0.3s cubic-bezier(0.25, 1, 0.5, 1), background-color 0.3s cubic-bezier(0.25, 1, 0.5, 1), border 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+            mix-blend-mode: difference;
+            box-sizing: border-box;
+            will-change: transform;
+        }
+
+        .cursor-active {
+            width: 50px !important;
+            height: 50px !important;
+            background-color: rgba(255, 255, 255, 0.15) !important;
+            border: 1px solid rgba(255, 255, 255, 0.8) !important;
+            mix-blend-mode: normal !important;
+        }
+
+        .liquid-reveal {
+            position: relative;
+            display: inline-block;
+            transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+            text-shadow: 0 0 0 rgba(255, 255, 255, 0);
+        }
+
+        .liquid-reveal:hover {
+            transform: skewX(-5deg);
+            text-shadow: 0 0 20px rgba(198, 198, 198, 0.4);
+            color: #ffffff;
+        }
+
+        .glow-heading-link {
+            transition: all 0.4s ease;
+        }
+
+        .glow-heading-link:hover {
+            text-shadow: 0 0 30px rgba(0, 240, 255, 0.6), 0 0 60px rgba(0, 240, 255, 0.3);
+            color: #ffffff;
+        }
+
+        .tactile-card {
+            background: var(--surface-glass);
+            backdrop-filter: blur(12px);
+            transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .tactile-card:hover {
+            background: rgba(255, 255, 255, 0.06);
+            transform: translateY(-2px);
+        }
+
+        .glow-effect {
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at var(--x, 50%) var(--y, 50%), rgba(255, 255, 255, 0.05), transparent 60%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            pointer-events: none;
+        }
+
+        .tactile-card:hover .glow-effect {
+            opacity: 1;
+        }
+
+        /* Scroll Reveal Animations */
+        .scroll-reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 1s cubic-bezier(0.23, 1, 0.32, 1), transform 1s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+
+        .scroll-reveal.is-revealed {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .hero-reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            animation: heroFadeInUp 1.2s cubic-bezier(0.23, 1, 0.32, 1) forwards;
+        }
+
+        @keyframes heroFadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        ::-webkit-scrollbar {
+            width: 4px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #131313;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #353535;
+            border-radius: 10px;
+        }
+
+        .section-header-type {
+            font-family: 'Syne', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            font-weight: 800;
+        }
+
+        /* Horizontal Scroll Specific Styles */
+        .work-horizontal-wrapper {
+            overflow: hidden;
+        }
+
+        .work-scroll-container {
+            display: flex;
+            width: 300vw;
+            /* 3 panels */
+            height: 100vh;
+        }
+
+        .work-panel {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0 var(--margin-mobile);
+        }
+
+        @media (min-width: 768px) {
+            .work-panel {
+                padding: 0 var(--margin-desktop);
+            }
+        }
+
+        /* Stack Vis Styles */
+        .stack-item {
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .stack-container {
+            border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+            border-left: 2px solid rgba(255, 255, 255, 0.1);
+            border-right: 2px solid rgba(255, 255, 255, 0.1);
+        }
+
+        #scroll-arrow path {
+            stroke-dasharray: 1000;
+            stroke-dashoffset: 1000;
+            transition: stroke-dashoffset 1s ease-out;
+        }
+
+        #scroll-arrow.draw path {
+            stroke-dashoffset: 0;
+        }
+
+        /* Canvas Background */
+        #matrix-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        /* Interactive Wordmark Reveal */
+        .keshav-text {
+            font-size: 15vw;
+            font-weight: 800;
+            font-family: 'Syne', sans-serif;
+            color: rgba(255, 255, 255, 0.04);
+            line-height: 0.8;
+            position: relative;
+            transform: translateY(100%);
+            opacity: 0;
+            white-space: nowrap;
+        }
+
+        .keshav-text.is-revealed {
+            opacity: 1;
+            transform: translateY(0);
+            transition: transform 2s cubic-bezier(0.23, 1, 0.32, 1), opacity 2s ease;
+        }
+
+        .keshav-text::before {
+            content: "KESHAV";
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            color: #ffffff;
+            -webkit-mask-image: radial-gradient(circle 20vw at var(--mouse-x, 50%) var(--mouse-y, 50%), black 0%, transparent 100%);
+            mask-image: radial-gradient(circle 20vw at var(--mouse-x, 50%) var(--mouse-y, 50%), black 0%, transparent 100%);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+            pointer-events: none;
+            z-index: 10;
+        }
+
+        #finale:hover .keshav-text::before {
+            opacity: 1;
+        }
+
+        /* Glitch Terminal Specific Styles */
+        @keyframes float-terminal {
+
+            0%,
+            100% {
+                transform: translate(-50%, 0);
+            }
+
+            50% {
+                transform: translate(-50%, -15px);
+            }
+        }
+
+        .glitch-terminal {
+            animation: float-terminal 5s ease-in-out infinite;
+            box-shadow: 0 0 30px rgba(0, 240, 255, 0.15);
+        }
+
+        @keyframes scan {
+            0% {
+                transform: translateY(-100%);
+            }
+
+            100% {
+                transform: translateY(200%);
+            }
+        }
+
+        .scanline {
+            animation: scan 3s linear infinite;
+        }
+
+        .glitch-text:hover {
+            animation: glitch-anim 0.3s linear infinite;
+        }
+
+        @keyframes glitch-anim {
+            0% {
+                transform: translate(0)
+            }
+
+            20% {
+                transform: translate(-2px, 1px)
+            }
+
+            40% {
+                transform: translate(-1px, -1px)
+            }
+
+            60% {
+                transform: translate(2px, 1px)
+            }
+
+            80% {
+                transform: translate(1px, -1px)
+            }
+
+            100% {
+                transform: translate(0)
+            }
+        }
+    </style>
+</head>
+
+<body class="bg-background text-on-surface" style="scroll-behavior: auto;">
+    <canvas class="" id="matrix-bg"
+        style="position: fixed; top: 0px; left: 0px; width: 100vw; height: 100vh; z-index: -1; pointer-events: none;"
+        width="1280" height="8756"></canvas>
+    <div id="custom-cursor" style="transform: translate3d(626px, 1352px, 0px) translate(-50%, -50%);" class=""></div>
+    <!-- Hamburger Menu Overlay -->
+    <div class="fixed inset-0 z-[100] bg-surface/80 backdrop-blur-xl flex flex-col justify-center items-center opacity-0 pointer-events-none transition-opacity duration-500"
+        id="menu-overlay">
+        <button
+            class="absolute top-8 right-margin-mobile md:right-margin-desktop material-symbols-outlined text-4xl text-on-surface hover:text-electric-blue transition-colors duration-300"
+            id="close-menu">close</button>
+        <nav class="flex flex-col items-center gap-8">
+            <a class="menu-link font-display-xl text-5xl md:text-7xl uppercase text-on-surface hover:text-white transition-all duration-300 hover:drop-shadow-[0_0_20px_rgba(0,240,255,0.6)]"
+                href="#work">Work</a>
+            <a class="menu-link font-display-xl text-5xl md:text-7xl uppercase text-on-surface hover:text-white transition-all duration-300 hover:drop-shadow-[0_0_20px_rgba(0,240,255,0.6)]"
+                href="#experience">Experience</a>
+            <a class="menu-link font-display-xl text-5xl md:text-7xl uppercase text-on-surface hover:text-white transition-all duration-300 hover:drop-shadow-[0_0_20px_rgba(0,240,255,0.6)]"
+                href="#stack">Stack</a>
+            <a class="menu-link font-display-xl text-5xl md:text-7xl uppercase text-on-surface hover:text-white transition-all duration-300 hover:drop-shadow-[0_0_20px_rgba(0,240,255,0.6)]"
+                href="#recognition">Recognition</a>
+            <a class="menu-link font-display-xl text-5xl md:text-7xl uppercase text-on-surface hover:text-white transition-all duration-300 hover:drop-shadow-[0_0_20px_rgba(0,240,255,0.6)]"
+                href="{{DATA:SCREEN:SCREEN_7}}">Study Material</a>
+            <a class="menu-link font-display-xl text-5xl md:text-7xl uppercase text-on-surface hover:text-white transition-all duration-300 hover:drop-shadow-[0_0_20px_rgba(0,240,255,0.6)]"
+                href="#finale">Contact</a>
+        </nav>
+    </div>
+    <header
+        class="fixed top-0 left-0 w-full z-50 transition-all duration-700 bg-surface/40 backdrop-blur-2xl border-b border-white/5">
+        <nav
+            class="flex justify-between items-center h-20 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+            <a class="font-display-xl text-xl tracking-tight text-on-surface" href="#">KINETIC</a>
+            <button
+                class="material-symbols-outlined text-3xl text-on-surface hover:text-electric-blue transition-colors duration-300"
+                id="open-menu">menu</button>
+        </nav>
+    </header>
+    <main class="w-full">
+        <!-- 1. Hero & Identity Section -->
+        <section
+            class="max-w-container-max mx-auto pt-40 pb-32 px-margin-mobile md:px-margin-desktop min-h-[90vh] flex flex-col justify-center">
+            <header>
+                <h1
+                    class="font-display-xl text-[clamp(4rem,10vw,8rem)] leading-[0.9em] -tracking-[0.04em] font-extrabold mb-8">
+                    <div class="hero-reveal" style="animation-delay: 0.1s"><span class="liquid-reveal">LIQUID</span>
+                    </div>
+                    <div class="hero-reveal" style="animation-delay: 0.25s"><span
+                            class="text-on-surface-variant/10 liquid-reveal">LOGIC.</span></div>
+                </h1>
+                <div class="flex flex-col md:flex-row justify-between items-start md:items-end gap-12">
+                    <p class="font-body-md text-xl md:text-2xl max-w-2xl text-on-surface-variant font-light leading-relaxed hero-reveal"
+                        style="animation-delay: 0.4s">
+                        Interdisciplinary engineer exploring the intersection of <span class="text-on-surface">tactile
+                            hardware</span> and <span class="text-on-surface">generative motion systems</span>.
+                        Currently designing spatial tools for the next web.
+                    </p>
+                    <div class="flex flex-col gap-6 hero-reveal" style="animation-delay: 0.55s">
+                        <div class="flex gap-3 shrink-0">
+                            <span
+                                class="px-4 py-1.5 rounded-full border border-white/10 text-on-surface font-label-sm text-[10px] uppercase tracking-widest bg-white/5 flex items-center gap-2">
+                                <span class="w-1.5 h-1.5 bg-lime-green rounded-full animate-pulse"></span>
+                                Available for Q4
+                            </span>
+                            <span
+                                class="px-4 py-1.5 rounded-full border border-white/5 text-on-surface-variant font-label-sm text-[10px] uppercase tracking-widest">Berlin,
+                                DE</span>
+                        </div>
+                        <div class="flex flex-wrap gap-4 pt-2">
+                            <a class="font-display-xl text-sm uppercase tracking-widest px-6 py-2.5 border border-white/20 rounded-full bg-surface-glass backdrop-blur-md hover:border-electric-blue hover:text-electric-blue transition-all duration-300 shadow-[0_0_0_rgba(0,240,255,0)] hover:shadow-[0_0_15px_rgba(0,240,255,0.3)] text-on-surface"
+                                href="#">Github</a>
+                            <a class="font-display-xl text-sm uppercase tracking-widest px-6 py-2.5 border border-white/20 rounded-full bg-surface-glass backdrop-blur-md hover:border-lime-green hover:text-lime-green transition-all duration-300 shadow-[0_0_0_rgba(204,255,0,0)] hover:shadow-[0_0_15px_rgba(204,255,0,0.3)] text-on-surface"
+                                href="#">LinkedIn</a>
+                            <a class="font-display-xl text-sm uppercase tracking-widest px-6 py-2.5 border border-white/20 rounded-full bg-surface-glass backdrop-blur-md hover:border-electric-blue hover:text-electric-blue transition-all duration-300 shadow-[0_0_0_rgba(0,240,255,0)] hover:shadow-[0_0_15px_rgba(0,240,255,0.3)] text-on-surface"
+                                href="#">Resume</a>
+                        </div>
+                    </div>
+                </div>
+            </header>
+        </section>
+        <!-- 2. Featured Projects Section (Horizontal Scroll) -->
+        <div class="pin-spacer"
+            style="order: 0; place-self: auto; grid-area: auto; z-index: auto; float: none; flex-shrink: 1; display: block; margin: 0px; inset: auto; position: relative; flex-basis: auto; overflow: visible; box-sizing: border-box; width: 1280px; height: 4864px; padding: 0px 0px 3840px;">
+            <div class="pin-spacer"
+                style="order: 0; place-self: auto; grid-area: auto; z-index: auto; float: none; flex-shrink: 1; display: block; margin: 0px; inset: 0px auto auto 0px; position: relative; flex-basis: auto; overflow: visible; box-sizing: border-box; width: 1280px; height: 4864px; padding: 0px 0px 3840px;">
+                <div class="pin-spacer"
+                    style="order: 0; place-self: auto; grid-area: auto; z-index: auto; float: none; flex-shrink: 1; display: block; margin: 0px; inset: 0px auto auto 0px; position: relative; flex-basis: auto; overflow: visible; box-sizing: border-box; width: 1280px; height: 4864px; padding: 0px 0px 3840px;">
+                    <div class="pin-spacer"
+                        style="order: 0; place-self: auto; grid-area: auto; z-index: auto; float: none; flex-shrink: 1; display: block; margin: 0px; inset: 0px auto auto 0px; position: relative; flex-basis: auto; overflow: visible; box-sizing: border-box; width: 1280px; height: 4864px; padding: 0px 0px 3840px;">
+                        <section class="bg-surface-container-lowest/30 work-horizontal-wrapper" id="work"
+                            style="translate: none; rotate: none; scale: none; inset: 0px auto auto 0px; margin: 0px; max-width: 1280px; width: 1280px; max-height: 1024px; height: 1024px; padding: 0px; transform: translate(0px, 0px);">
+                            <div class="work-scroll-container">
+                                <!-- Panel 1: Liquid Logic -->
+                                <div class="work-panel"
+                                    style="translate: none; rotate: none; scale: none; transform: translate(0px, 0px);">
+                                    <div
+                                        class="w-full max-w-container-max flex flex-col md:flex-row gap-16 items-center">
+                                        <div class="md:w-1/4 mb-8 md:mb-0 scroll-reveal is-revealed">
+                                            <h2 class="section-header-type text-4xl mb-4">Work</h2>
+                                            <p
+                                                class="font-label-sm text-on-surface-variant/60 uppercase tracking-widest text-[11px]">
+                                                Selected spatial artifacts &amp; interfaces</p>
+                                        </div>
+                                        <div class="w-full md:w-3/4 scroll-reveal tactile-card border border-outline-variant/20 rounded-2xl p-8 md:p-12 is-revealed"
+                                            style="transition-delay: 0.1s; --x: 28.393752245393735%; --y: 28.45744680851064%;">
+                                            <span
+                                                class="font-label-sm text-xs text-electric-blue mb-4 block tracking-[0.3em]">01
+                                                — AXON INTERFACE</span>
+                                            <a class="block mb-6 group w-fit" href="#">
+                                                <h3
+                                                    class="font-display-xl text-5xl md:text-7xl liquid-reveal glow-heading-link">
+                                                    LIQUID LOGIC</h3>
+                                            </a>
+                                            <p class="font-body-md text-on-surface-variant max-w-xl text-lg mb-8">
+                                                Exploring the intersection of generative motion and tactile hardware.
+                                                Building digital artifacts that behave with physical honesty and bridge
+                                                the gap between complex engineering and emotional design.</p>
+                                            <div class="flex flex-wrap gap-4">
+                                                <span
+                                                    class="px-6 py-2 bg-white/5 rounded-full text-xs font-label-sm uppercase tracking-widest border border-white/5">TypeScript</span>
+                                                <span
+                                                    class="px-6 py-2 bg-white/5 rounded-full text-xs font-label-sm uppercase tracking-widest border border-white/5">WebGL</span>
+                                                <span
+                                                    class="px-6 py-2 bg-white/5 rounded-full text-xs font-label-sm uppercase tracking-widest border border-white/5">React
+                                                    Node</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Panel 2: The Vision -->
+                                <div class="work-panel"
+                                    style="translate: none; rotate: none; scale: none; transform: translate(0px, 0px);">
+                                    <div
+                                        class="w-full max-w-3xl scroll-reveal tactile-card border border-outline-variant/20 rounded-2xl p-8 md:p-12">
+                                        <span
+                                            class="font-label-sm text-xs text-lime-green mb-4 block tracking-[0.3em]">02
+                                            — SPATIAL CORE</span>
+                                        <a class="block mb-6 group w-fit" href="#">
+                                            <h3
+                                                class="font-display-xl text-5xl md:text-7xl liquid-reveal glow-heading-link">
+                                                THE VISION</h3>
+                                        </a>
+                                        <p class="font-body-md text-on-surface-variant leading-relaxed text-xl mb-8">
+                                            I build digital artifacts that behave with physical honesty. My work bridges
+                                            the gap between complex engineering and emotional design, creating a
+                                            seamless connection between user and interface.
+                                        </p>
+                                        <div class="flex flex-wrap gap-4">
+                                            <span
+                                                class="px-6 py-2 bg-white/5 rounded-full text-xs font-label-sm uppercase tracking-widest border border-white/5">Framer
+                                                Motion</span>
+                                            <span
+                                                class="px-6 py-2 bg-white/5 rounded-full text-xs font-label-sm uppercase tracking-widest border border-white/5">Three.js</span>
+                                            <span
+                                                class="px-6 py-2 bg-white/5 rounded-full text-xs font-label-sm uppercase tracking-widest border border-white/5">Tailwind</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Panel 3: Prism Visuals -->
+                                <div class="work-panel"
+                                    style="translate: none; rotate: none; scale: none; transform: translate(0px, 0px);">
+                                    <div
+                                        class="w-full max-w-3xl scroll-reveal tactile-card border border-outline-variant/20 rounded-2xl p-8 md:p-12">
+                                        <span class="font-label-sm text-xs text-primary mb-4 block tracking-[0.3em]">03
+                                            — AUDIO REACTIVE</span>
+                                        <a class="block mb-6 group w-fit" href="#">
+                                            <h3
+                                                class="font-display-xl text-5xl md:text-7xl liquid-reveal glow-heading-link">
+                                                PRISM VISUALS</h3>
+                                        </a>
+                                        <p class="font-body-md text-on-surface-variant text-xl mb-8">Generative
+                                            shader-based visualizer for spatial audio. Utilizes highly optimized data
+                                            buffers to render thousands of reactive particles in real-time within the
+                                            browser.</p>
+                                        <div class="flex flex-wrap gap-4">
+                                            <span
+                                                class="px-6 py-2 bg-white/5 rounded-full text-xs font-label-sm uppercase tracking-widest border border-white/5">WebGL</span>
+                                            <span
+                                                class="px-6 py-2 bg-white/5 rounded-full text-xs font-label-sm uppercase tracking-widest border border-white/5">GSAP</span>
+                                            <span
+                                                class="px-6 py-2 bg-white/5 rounded-full text-xs font-label-sm uppercase tracking-widest border border-white/5">GLSL</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 3. Recognition Section -->
+        <section class="py-section-gap px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto"
+            id="recognition">
+            <div class="mb-16 scroll-reveal is-revealed">
+                <h2 class="section-header-type text-4xl mb-4">RECOGNITION</h2>
+                <p class="font-label-sm text-on-surface-variant/60 uppercase tracking-widest text-[11px]">Honors,
+                    leadership, and creative mastery</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-6">
+                <!-- Honors & Awards -->
+                <div class="tactile-card border border-outline-variant/20 md:col-span-8 rounded-2xl p-8 flex flex-col justify-between scroll-reveal is-revealed"
+                    style="transition-delay: 0.1s">
+                    <div class="glow-effect"></div>
+                    <div>
+                        <div class="flex justify-between items-start mb-8">
+                            <span class="material-symbols-outlined text-yellow-500 text-4xl">emoji_events</span>
+                            <span
+                                class="font-label-sm text-[10px] opacity-40 uppercase tracking-widest">Excellence</span>
+                        </div>
+                        <h4 class="font-display-xl text-2xl uppercase mb-3 liquid-reveal">Honors &amp; Awards</h4>
+                        <div class="space-y-4">
+                            <div class="flex justify-between items-center border-b border-white/5 pb-2">
+                                <span class="font-body-md text-on-surface">Global Hackathon Finalist</span>
+                                <span class="font-label-sm text-[10px] text-on-surface-variant">2023</span>
+                            </div>
+                            <div class="flex justify-between items-center border-b border-white/5 pb-2">
+                                <span class="font-body-md text-on-surface">Academic Merit Scholarship</span>
+                                <span class="font-label-sm text-[10px] text-on-surface-variant">2022</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Leadership -->
+                <div class="tactile-card border border-outline-variant/20 md:col-span-4 rounded-2xl p-8 flex flex-col justify-between group scroll-reveal is-revealed"
+                    style="transition-delay: 0.2s">
+                    <div class="glow-effect"></div>
+                    <div>
+                        <div class="w-12 h-12 bg-electric-blue/10 rounded-xl flex items-center justify-center mb-8">
+                            <span class="material-symbols-outlined text-electric-blue text-3xl">groups</span>
+                        </div>
+                        <h4 class="font-display-xl text-2xl uppercase mb-3 liquid-reveal">Leadership</h4>
+                        <p class="font-body-md text-sm text-on-surface-variant leading-relaxed">
+                            Lead Organizer for Tech-Nexus Summit. Directed a team of 15 to facilitate cross-disciplinary
+                            collaboration.
+                        </p>
+                    </div>
+                </div>
+                <!-- Creative Arsenal -->
+                <div class="tactile-card border border-outline-variant/20 md:col-span-12 rounded-2xl p-10 flex flex-col md:flex-row items-center justify-between group scroll-reveal is-revealed"
+                    style="transition-delay: 0.3s">
+                    <div class="glow-effect"></div>
+                    <div class="mb-8 md:mb-0">
+                        <h4 class="font-display-xl text-3xl uppercase mb-2 liquid-reveal">Creative Arsenal</h4>
+                        <p class="font-body-md text-on-surface-variant">Visual storytelling and high-fidelity interface
+                            architecture</p>
+                    </div>
+                    <div class="flex flex-wrap gap-4">
+                        <div class="flex items-center gap-3 px-6 py-3 bg-white/5 rounded-full border border-white/10">
+                            <span class="font-label-sm text-[10px] uppercase tracking-widest">Next.js</span></div>
+                        <div class="flex items-center gap-3 px-6 py-3 bg-white/5 rounded-full border border-white/10">
+                            <span class="font-label-sm text-[10px] uppercase tracking-widest">TypeScript</span></div>
+                        <div class="flex items-center gap-3 px-6 py-3 bg-white/5 rounded-full border border-white/10">
+                            <span class="font-label-sm text-[10px] uppercase tracking-widest">PostgreSQL</span></div>
+                        <div class="flex items-center gap-3 px-6 py-3 bg-white/5 rounded-full border border-white/10">
+                            <span class="font-label-sm text-[10px] uppercase tracking-widest">Docker</span></div>
+                        <div class="flex items-center gap-3 px-6 py-3 bg-white/5 rounded-full border border-white/10">
+                            <span class="font-label-sm text-[10px] uppercase tracking-widest">AWS</span></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- 4. Interactive Stack Section -->
+        <section class="py-section-gap px-margin-mobile md:px-margin-desktop bg-surface-container-lowest/30" id="stack">
+            <div class="max-w-container-max mx-auto">
+                <div
+                    class="mb-16 flex flex-col md:flex-row justify-between items-start md:items-end gap-8 scroll-reveal is-revealed">
+                    <div>
+                        <h2 class="section-header-type text-4xl mb-4">The Stack</h2>
+                        <p class="font-label-sm text-on-surface-variant/60 uppercase tracking-widest text-[11px]">
+                            Interactive primitives demonstrating the kinetic engine</p>
+                    </div>
+                </div>
+                <div class="w-full flex flex-col md:flex-row gap-12 items-center justify-center min-h-[500px] scroll-reveal is-revealed"
+                    style="transition-delay: 0.2s">
+                    <!-- Popped Items Area -->
+                    <div class="md:w-1/3 flex gap-4 items-center justify-start min-h-[400px] p-8 border border-dashed border-white/10 rounded-2xl relative flex-col-reverse"
+                        id="popped-container">
+                        <div
+                            class="absolute top-4 left-4 font-label-sm text-[10px] text-white/30 uppercase tracking-widest">
+                            Popped Elements</div>
+                    </div>
+                    <!-- The Stack Visualization -->
+                    <div class="md:w-1/3 flex flex-col items-center gap-8">
+                        <div class="stack-container w-64 min-h-[300px] flex flex-col-reverse justify-start p-4 gap-2 rounded-b-xl relative bg-black/20 h-[450px]"
+                            id="main-stack">
+                            <div
+                                class="stack-item w-full py-3 px-4 bg-surface-variant/40 border border-white/10 rounded-lg text-center font-label-sm text-xs uppercase tracking-widest tactile-card">
+                                Next.js<div class="glow-effect"></div>
+                            </div>
+                            <div
+                                class="stack-item w-full py-3 px-4 bg-surface-variant/40 border border-white/10 rounded-lg text-center font-label-sm text-xs uppercase tracking-widest tactile-card">
+                                TypeScript<div class="glow-effect"></div>
+                            </div>
+                            <div
+                                class="stack-item w-full py-3 px-4 bg-surface-variant/40 border border-white/10 rounded-lg text-center font-label-sm text-xs uppercase tracking-widest tactile-card">
+                                PostgreSQL<div class="glow-effect"></div>
+                            </div>
+                            <div
+                                class="stack-item w-full py-3 px-4 bg-surface-variant/40 border border-white/10 rounded-lg text-center font-label-sm text-xs uppercase tracking-widest tactile-card">
+                                Docker<div class="glow-effect"></div>
+                            </div>
+                            <div
+                                class="stack-item w-full py-3 px-4 bg-surface-variant/40 border border-white/10 rounded-lg text-center font-label-sm text-xs uppercase tracking-widest tactile-card">
+                                AWS<div class="glow-effect"></div>
+                            </div>
+                            <div
+                                class="stack-item w-full py-3 px-4 bg-surface-variant/40 border border-white/10 rounded-lg text-center font-label-sm text-xs uppercase tracking-widest tactile-card">
+                                Three.js<div class="glow-effect"></div>
+                            </div>
+                            <div
+                                class="stack-item w-full py-3 px-4 bg-surface-variant/40 border border-white/10 rounded-lg text-center font-label-sm text-xs uppercase tracking-widest tactile-card">
+                                React<div class="glow-effect"></div>
+                            </div>
+                            <div
+                                class="stack-item w-full py-3 px-4 bg-surface-variant/40 border border-white/10 rounded-lg text-center font-label-sm text-xs uppercase tracking-widest tactile-card">
+                                GSAP<div class="glow-effect"></div>
+                            </div>
+                            <div
+                                class="stack-item w-full py-3 px-4 bg-surface-variant/40 border border-white/10 rounded-lg text-center font-label-sm text-xs uppercase tracking-widest tactile-card">
+                                Tailwind<div class="glow-effect"></div>
+                            </div>
+                        </div>
+                        <div class="flex flex-col items-center gap-6">
+                            <svg class="w-8 h-12 text-white/40" fill="none" id="scroll-arrow" stroke="currentColor"
+                                stroke-width="2" viewBox="0 0 24 40">
+                                <path d="M12 4 L12 36 M6 30 L12 36 L18 30"></path>
+                            </svg>
+                            <div class="flex gap-4">
+                                <button
+                                    class="font-label-sm text-xs tracking-widest uppercase border border-white/20 bg-white/5 px-8 py-3 rounded-xl hover:bg-white/10 transition-all disabled:opacity-30 disabled:cursor-not-allowed"
+                                    id="pop-btn">POP</button>
+                                <button
+                                    class="font-label-sm text-xs tracking-widest uppercase border border-white/20 bg-white/5 px-8 py-3 rounded-xl hover:bg-white/10 transition-all disabled:opacity-30 disabled:cursor-not-allowed"
+                                    disabled="" id="push-btn">PUSH (-)</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- 5. Liquid Prism End Section -->
+        <section class="w-full relative flex items-center justify-center overflow-hidden flex-col py-32 min-h-screen"
+            id="finale">
+            <div
+                class="relative z-20 text-center px-margin-mobile mb-32 max-w-4xl mx-auto flex flex-col items-center justify-center w-full">
+                <h2 class="font-display-xl text-3xl md:text-5xl uppercase mb-6 tracking-tight w-full whitespace-nowrap">
+                    Interested in collaborating?</h2>
+                <p class="font-body-md text-on-surface-variant text-lg mb-10">For internship opportunities or inquiries,
+                    reach out at:</p>
+                <div class="flex flex-col md:flex-row items-center justify-center gap-8 md:gap-16 mx-auto w-full">
+                    <a class="group flex flex-col items-center gap-2 text-center" href="mailto:keshavsde@gmail.com">
+                        <span
+                            class="font-label-sm text-[10px] uppercase tracking-[0.3em] text-electric-blue opacity-60 group-hover:opacity-100 transition-opacity">Email</span>
+                        <span
+                            class="font-display-xl text-xl md:text-2xl hover:text-electric-blue transition-colors">keshavsde@gmail.com</span>
+                    </a>
+                    <a class="group flex flex-col items-center gap-2 text-center" href="tel:+15550198372">
+                        <span
+                            class="font-label-sm text-[10px] uppercase tracking-[0.3em] text-lime-green opacity-60 group-hover:opacity-100 transition-opacity">Terminal</span>
+                        <span class="font-display-xl text-xl md:text-2xl hover:text-lime-green transition-colors">+1
+                            (555) 019-8372</span>
+                    </a>
+                </div>
+            </div>
+            <h2 class="keshav-text w-full text-center m-0 p-0 select-none absolute -bottom-[2vw] is-revealed"
+                style="transform: none; opacity: 1; --mouse-x: 172px; --mouse-y: -118px;">KESHAV</h2>
+        </section>
+    </main>
+    <script>
+        // Matrix Background Effect
+        const canvas = document.getElementById('matrix-bg');
+        const ctx = canvas.getContext('2d');
+
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+
+        const keywords = ['REACT', 'THREE.JS', 'WEBGL', 'NEXT.JS', 'TYPESCRIPT', 'TAILWIND', 'GSAP', 'FRAMER', 'NODE', 'GLSL'];
+
+        class Particle {
+            constructor() {
+                this.x = Math.random() * canvas.width;
+                this.y = Math.random() * canvas.height;
+                this.speed = Math.random() * 1 + 0.5;
+                this.text = keywords[Math.floor(Math.random() * keywords.length)];
+                this.fontSize = Math.random() * 10 + 10;
+                this.opacity = Math.random() * 0.15 + 0.05;
+            }
+
+            update(mouseX, mouseY) {
+                this.y += this.speed;
+                if (this.y > canvas.height) {
+                    this.y = 0;
+                    this.x = Math.random() * canvas.width;
+                }
+
+                // Mouse interaction logic
+                if (mouseX && mouseY) {
+                    const dx = mouseX - this.x;
+                    const dy = mouseY - this.y;
+                    const distance = Math.sqrt(dx * dx + dy * dy);
+                    const maxDistance = 150;
+
+                    if (distance < maxDistance) {
+                        const force = (maxDistance - distance) / maxDistance;
+                        this.x -= (dx / distance) * force * 5;
+                        this.y -= (dy / distance) * force * 5;
+                    }
+                }
+            }
+
+            draw() {
+                ctx.fillStyle = `rgba(255, 255, 255, ${this.opacity})`;
+                ctx.font = `${this.fontSize}px 'JetBrains Mono', monospace`;
+                ctx.fillText(this.text, this.x, this.y);
+            }
+        }
+
+        const particles = Array.from({ length: 50 }, () => new Particle());
+        let mouseX = null;
+        let mouseY = null;
+
+        document.addEventListener('mousemove', (e) => {
+            mouseX = e.clientX;
+            mouseY = e.clientY;
+        });
+
+        document.addEventListener('mouseleave', () => {
+            mouseX = null;
+            mouseY = null;
+        });
+
+        function animateMatrix() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            particles.forEach(p => {
+                p.update(mouseX, mouseY);
+                p.draw();
+            });
+            requestAnimationFrame(animateMatrix);
+        }
+
+        animateMatrix();
+
+        window.addEventListener('resize', () => {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        });
+
+
+        // Register GSAP ScrollTrigger
+        gsap.registerPlugin(ScrollTrigger);
+
+        // Scroll Reveal Observer
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-revealed');
+                }
+            });
+        }, {
+            threshold: 0.1,
+            rootMargin: "0px 0px -50px 0px"
+        });
+
+        document.querySelectorAll('.scroll-reveal').forEach(el => {
+            revealObserver.observe(el);
+        });
+
+        // Horizontal Scroll Logic
+        const workSection = document.querySelector('.work-horizontal-wrapper');
+        const workContainer = document.querySelector('.work-scroll-container');
+        const panels = gsap.utils.toArray('.work-panel');
+
+        gsap.to(panels, {
+            xPercent: -100 * (panels.length - 1),
+            ease: "none",
+            scrollTrigger: {
+                trigger: workSection,
+                pin: true,
+                scrub: 1,
+                snap: 1 / (panels.length - 1),
+                end: () => "+=" + workContainer.offsetWidth
+            }
+        });
+
+        // Custom Cursor Logic
+        const cursor = document.getElementById('custom-cursor');
+
+        function attachCursorEvents() {
+            const links = document.querySelectorAll('a, button, [role="button"], .cursor-pointer, .stack-item');
+            links.forEach(el => {
+                el.removeEventListener('mouseenter', onMouseEnter);
+                el.removeEventListener('mouseleave', onMouseLeave);
+                el.addEventListener('mouseenter', onMouseEnter);
+                el.addEventListener('mouseleave', onMouseLeave);
+            });
+        }
+
+        function onMouseEnter() {
+            cursor.classList.add('cursor-active');
+        }
+
+        function onMouseLeave() {
+            cursor.classList.remove('cursor-active');
+        }
+
+        document.addEventListener('mousemove', (e) => {
+            cursor.style.transform = `translate3d(${e.clientX}px, ${e.clientY}px, 0) translate(-50%, -50%)`;
+        });
+
+        attachCursorEvents();
+
+        // Hover Glow Effect Logic
+        document.querySelectorAll('.tactile-card').forEach(card => {
+            card.addEventListener('mousemove', e => {
+                const rect = card.getBoundingClientRect();
+                const x = ((e.clientX - rect.left) / rect.width) * 100;
+                const y = ((e.clientY - rect.top) / rect.height) * 100;
+                card.style.setProperty('--x', `${x}%`);
+                card.style.setProperty('--y', `${y}%`);
+            });
+        });
+
+        // Final Wordmark Reveal Logic
+        const finaleSection = document.getElementById('finale');
+        const keshavText = document.querySelector('.keshav-text');
+
+        if (finaleSection && keshavText) {
+            finaleSection.addEventListener('mousemove', (e) => {
+                const rect = keshavText.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                keshavText.style.setProperty('--mouse-x', `${x}px`);
+                keshavText.style.setProperty('--mouse-y', `${y}px`);
+            });
+        }
+
+        // Stack Data Structure Logic
+        const initialStack = ["Next.js", "TypeScript", "PostgreSQL", "Docker", "AWS", "Three.js", "React", "GSAP", "Tailwind"];
+        let mainStackState = [...initialStack];
+        let poppedStackState = [];
+
+        const mainStackEl = document.getElementById('main-stack');
+        const poppedStackEl = document.getElementById('popped-container');
+        const popBtn = document.getElementById('pop-btn');
+        const pushBtn = document.getElementById('push-btn');
+
+        function createStackItem(text) {
+            const div = document.createElement('div');
+            div.className = 'stack-item w-full py-3 px-4 bg-surface-variant/40 border border-white/10 rounded-lg text-center font-label-sm text-xs uppercase tracking-widest tactile-card';
+            div.textContent = text;
+
+            // Add glow effect div
+            const glow = document.createElement('div');
+            glow.className = 'glow-effect';
+            div.appendChild(glow);
+
+            // Add hover listener for cursor
+            div.addEventListener('mouseenter', onMouseEnter);
+            div.addEventListener('mouseleave', onMouseLeave);
+
+            // Add hover for glow
+            div.addEventListener('mousemove', e => {
+                const rect = div.getBoundingClientRect();
+                const x = ((e.clientX - rect.left) / rect.width) * 100;
+                const y = ((e.clientY - rect.top) / rect.height) * 100;
+                div.style.setProperty('--x', `${x}%`);
+                div.style.setProperty('--y', `${y}%`);
+            });
+
+            return div;
+        }
+
+        function renderStack() {
+            mainStackEl.innerHTML = '';
+            mainStackState.forEach(item => {
+                mainStackEl.appendChild(createStackItem(item));
+            });
+            updateButtons();
+        }
+
+        function updateButtons() {
+            popBtn.disabled = mainStackState.length === 0;
+
+            if (poppedStackState.length > 0) {
+                pushBtn.disabled = false;
+                pushBtn.textContent = `PUSH (${poppedStackState[poppedStackState.length - 1]})`;
+            } else {
+                pushBtn.disabled = true;
+                pushBtn.textContent = 'PUSH (-)';
+            }
+        }
+
+        popBtn.addEventListener('click', () => {
+            if (mainStackState.length === 0) return;
+
+            const poppedItem = mainStackState.pop();
+            poppedStackState.push(poppedItem);
+
+            // Visual transition
+            const topEl = mainStackEl.lastElementChild;
+            if (topEl) {
+                topEl.style.opacity = '0';
+                topEl.style.transform = 'translateY(-20px)';
+                setTimeout(() => {
+                    renderStack();
+                    const newPoppedEl = createStackItem(poppedItem);
+                    newPoppedEl.style.opacity = '0';
+                    newPoppedEl.style.transform = 'translateY(20px)';
+                    poppedStackEl.appendChild(newPoppedEl);
+
+                    requestAnimationFrame(() => {
+                        newPoppedEl.style.opacity = '1';
+                        newPoppedEl.style.transform = 'translateY(0)';
+                    });
+                    attachCursorEvents();
+                }, 300);
+            } else {
+                renderStack();
+                attachCursorEvents();
+            }
+        });
+
+        pushBtn.addEventListener('click', () => {
+            if (poppedStackState.length === 0) return;
+
+            const pushedItem = poppedStackState.pop();
+            mainStackState.push(pushedItem);
+
+            // Visual transition
+            const topPoppedEl = poppedStackEl.lastElementChild;
+            if (topPoppedEl && topPoppedEl !== poppedStackEl.firstElementChild) { // don't remove title
+                topPoppedEl.style.opacity = '0';
+                topPoppedEl.style.transform = 'translateY(-20px)';
+                setTimeout(() => {
+                    topPoppedEl.remove();
+                    renderStack();
+                    const newTopEl = mainStackEl.lastElementChild;
+                    if (newTopEl) {
+                        newTopEl.style.opacity = '0';
+                        newTopEl.style.transform = 'translateY(-20px)';
+                        requestAnimationFrame(() => {
+                            newTopEl.style.transition = 'all 0.3s ease-out';
+                            newTopEl.style.opacity = '1';
+                            newTopEl.style.transform = 'translateY(0)';
+                        });
+                    }
+                    attachCursorEvents();
+                }, 300);
+            } else {
+                renderStack();
+                attachCursorEvents();
+            }
+        });
+
+        // Initialize stack
+        renderStack();
+        attachCursorEvents();
+
+        // Scroll arrow animation
+        ScrollTrigger.create({
+            trigger: "#stack",
+            start: "top center",
+            onEnter: () => document.getElementById('scroll-arrow').classList.add('draw')
+        });
+
+        // Scroll reveal header logic
+        let lastScroll = 0;
+        const navHeader = document.querySelector('header');
+        window.addEventListener('scroll', () => {
+            const currentScroll = window.pageYOffset;
+            if (currentScroll > 100) {
+                navHeader.classList.add('py-2');
+                navHeader.classList.remove('h-20');
+                navHeader.classList.add('h-16');
+            } else {
+                navHeader.classList.remove('py-2');
+                navHeader.classList.remove('h-16');
+                navHeader.classList.add('h-20');
+            }
+            lastScroll = currentScroll;
+        });
+
+        // Menu Overlay Logic
+        const menuOverlay = document.getElementById('menu-overlay');
+        const openMenuBtn = document.getElementById('open-menu');
+        const closeMenuBtn = document.getElementById('close-menu');
+        const menuLinks = document.querySelectorAll('.menu-link');
+
+        function openMenu() {
+            document.body.style.overflow = 'hidden';
+            menuOverlay.classList.remove('opacity-0', 'pointer-events-none');
+            menuOverlay.classList.add('opacity-100', 'pointer-events-auto');
+
+            gsap.fromTo(menuLinks,
+                { y: 50, opacity: 0 },
+                { y: 0, opacity: 1, duration: 0.6, stagger: 0.1, ease: "power3.out", delay: 0.2 }
+            );
+        }
+
+        function closeMenu() {
+            document.body.style.overflow = '';
+
+            gsap.to(menuLinks, {
+                y: -50, opacity: 0, duration: 0.4, stagger: 0.05, ease: "power3.in",
+                onComplete: () => {
+                    menuOverlay.classList.add('opacity-0', 'pointer-events-none');
+                    menuOverlay.classList.remove('opacity-100', 'pointer-events-auto');
+                }
+            });
+        }
+
+        openMenuBtn.addEventListener('click', openMenu);
+        closeMenuBtn.addEventListener('click', closeMenu);
+        menuLinks.forEach(link => {
+            link.addEventListener('click', closeMenu);
+        });
+
+    </script>
+
+
+
+
+</body>
+
+</html>
